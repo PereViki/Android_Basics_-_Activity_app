@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="matchPar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="wrapCont" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="firstText" parent="wrapCont">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/mediumFontSize</item>
+        <item name="android:layout_marginTop">250dp</item>
+    </style>
+
+    <style name="checkBoxes" parent="wrapCont">
+        <item name="android:buttonTint">@color/textColor</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="counterStyle1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">48dp</item>
+    </style>
+
+    <style name="startButton" parent="wrapCont">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/counterSize</item>
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="controls" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/controlsTopMargin</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="counters" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/countersTopMargin</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="counter" parent="wrapCont">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="teamPoints" parent="wrapCont">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/largeFontSize</item>
+        <item name="android:layout_marginTop">18dp</item>
+    </style>
+
+    <style name="pointLabel" parent="teamPoints">
+        <item name="android:textSize">@dimen/smallFontSize</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+    <style name="divider" parent="matchPar">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:background">@color/transparentWhite</item>
+    </style>
+
+    <style name="cardButtons" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">@dimen/cardSize</item>
+        <item name="android:layout_width">@dimen/cardSize</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="bottomButtons" parent="controls">
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="counterButton" parent="startButton">
+        <item name="android:layout_marginBottom">@dimen/smallFontSize</item>
+        <item name="android:layout_marginRight">@dimen/tinySpace</item>
+        <item name="android:layout_marginLeft">@dimen/tinySpace</item>
+    </style>
+</resources>

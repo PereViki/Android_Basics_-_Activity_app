@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="tasks">
+        <item>@drawable/task0all</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task4draw_green</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task5speak_purple</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task2speak_blue</item>
+        <item>@drawable/task1draw_yellow</item>
+        <item>@drawable/task3show_pink</item>
+        <item>@drawable/task6show_orange</item>
+        <item>@drawable/task0all</item>
+        <item>@drawable/task0all</item>
+        <item>@drawable/task0all</item>
+        <item>@drawable/task0all</item>
+        <item>@drawable/task0all</item>
+        <item>@drawable/task0all</item>
+
+    </integer-array>
+</resources>

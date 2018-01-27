@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Activity</string>
+    <string name="which_teams">Which teams will play?</string>
+    <string name="start_button">Start</string>
+    <string name="red_team">Red team</string>
+    <string name="green_team">Green team</string>
+    <string name="blue_team">Blue team</string>
+    <string name="yellow_team">Yellow team</string>
+    <string name="teamToast">At least 2 teams have to play!</string>
+    <string name="team1Points">0</string>
+    <string name="points">points</string>
+    <string name="team2Points">0</string>
+    <string name="team3Points">0</string>
+    <string name="team4Points">0</string>
+    <string name="quit_game">Quit Game</string>
+    <string name="start_timer">Start timer</string>
+    <string name="reset_timer">Reset</string>
+    <string name="timeIsUp">Time is up!</string>
+    <string name="the_winner_is">The winner is:</string>
+    <string name="timerNo">60</string>
+</resources>

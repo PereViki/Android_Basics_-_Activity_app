@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Activity</string>
+    <string name="which_teams">Melyik csapatok játszanak?</string>
+    <string name="start_button">Játék indítása</string>
+    <string name="red_team">Piros csapat</string>
+    <string name="green_team">Zöld csapat</string>
+    <string name="blue_team">Kék csapat</string>
+    <string name="yellow_team">Sárga csapat</string>
+    <string name="teamToast">Legalább 2 csapat kell a játékhoz!</string>
+    <string name="team1Points">0</string>
+    <string name="points">pont</string>
+    <string name="team2Points">0</string>
+    <string name="team3Points">0</string>
+    <string name="team4Points">0</string>
+    <string name="quit_game">Kilépés</string>
+    <string name="start_timer">Óra indul</string>
+    <string name="reset_timer">Leállítás</string>
+    <string name="timeIsUp">Lejárt az idő!</string>
+    <string name="the_winner_is">A nyertes:</string>
+    <string name="timerNo">60</string>
+</resources>
