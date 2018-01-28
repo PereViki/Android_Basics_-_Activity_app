@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/matchPar"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.android.activity.Counter">
+
+    <ImageView
+        style="@style/matchPar"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/bg_counter" />
+
+    <LinearLayout style="@style/countersL">
+
+        <!-- 1st team START -->
+
+        <LinearLayout
+            android:id="@+id/firstTeamGroup"
+            style="@style/counterL">
+
+            <ImageView
+                style="@style/counterStyle1"
+                android:src="@drawable/counter_r"/>
+
+            <TextView
+                android:id="@+id/totalPointsRed"
+                style="@style/teamPointsL"
+                android:text="@string/team1Points"
+                />
+
+            <TextView
+                style="@style/pointLabelL"
+                android:text="@string/points"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/red3"
+                style="@style/cardButtonsL"
+                android:onClick="add3Red"
+                android:src="@drawable/point3" />
+
+            <ImageView
+                android:id="@+id/red4"
+                style="@style/cardButtonsL"
+                android:onClick="add4Red"
+                android:src="@drawable/point4" />
+
+            <ImageView
+                android:id="@+id/red5"
+                style="@style/cardButtonsL"
+                android:onClick="add5Red"
+                android:src="@drawable/point5" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/redTask"
+                style="@style/cardButtons"
+                android:src="@drawable/task0all" />
+
+        </LinearLayout>
+
+        <!-- 1st team END -->
+
+        <View style="@style/divider" />
+
+        <!-- 2nd team START -->
+
+        <LinearLayout
+            android:id="@+id/secondTeamGroup"
+            style="@style/counterL">
+
+            <ImageView
+                style="@style/counterStyle1"
+                android:src="@drawable/counter_g" />
+
+            <TextView
+                android:id="@+id/totalPointsGreen"
+                style="@style/teamPointsL"
+                android:text="@string/team2Points" />
+
+            <TextView
+                style="@style/pointLabelL"
+                android:text="@string/points" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/green3"
+                style="@style/cardButtonsL"
+                android:onClick="add3Green"
+                android:src="@drawable/point3" />
+
+            <ImageView
+                android:id="@+id/green4"
+                style="@style/cardButtonsL"
+                android:onClick="add4Green"
+                android:src="@drawable/point4" />
+
+            <ImageView
+                android:id="@+id/green5"
+                style="@style/cardButtonsL"
+                android:onClick="add5Green"
+                android:src="@drawable/point5" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/greenTask"
+                style="@style/cardButtons"
+                android:src="@drawable/task0all" />
+
+        </LinearLayout>
+
+        <!-- 2nd team END -->
+
+        <View style="@style/divider" />
+
+        <!-- 3rd team START -->
+
+        <LinearLayout
+            android:id="@+id/thirdTeamGroup"
+            style="@style/counterL">
+
+            <ImageView
+                style="@style/counterStyle1"
+                android:src="@drawable/counter_b" />
+
+            <TextView
+                android:id="@+id/totalPointsBlue"
+                style="@style/teamPointsL"
+                android:text="@string/team3Points" />
+
+            <TextView
+                style="@style/pointLabelL"
+                android:text="@string/points" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/blue3"
+                style="@style/cardButtonsL"
+                android:onClick="add3Blue"
+                android:src="@drawable/point3" />
+
+            <ImageView
+                android:id="@+id/blue4"
+                style="@style/cardButtonsL"
+                android:onClick="add4Blue"
+                android:src="@drawable/point4" />
+
+            <ImageView
+                android:id="@+id/blue5"
+                style="@style/cardButtonsL"
+                android:onClick="add5Blue"
+                android:src="@drawable/point5" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/blueTask"
+                style="@style/cardButtons"
+                android:src="@drawable/task0all" />
+
+        </LinearLayout>
+
+        <!-- 3rd team END -->
+
+        <View style="@style/divider" />
+
+        <!-- 4th team START -->
+
+        <LinearLayout
+            android:id="@+id/fourthTeamGroup"
+            style="@style/counterL">
+
+            <ImageView
+                style="@style/counterStyle1"
+                android:src="@drawable/counter_y" />
+
+            <TextView
+                android:id="@+id/totalPointsYellow"
+                style="@style/teamPointsL"
+                android:text="@string/team4Points" />
+
+            <TextView
+                style="@style/pointLabelL"
+                android:text="@string/points" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/yellow3"
+                style="@style/cardButtonsL"
+                android:onClick="add3Yellow"
+                android:src="@drawable/point3" />
+
+            <ImageView
+                android:id="@+id/yellow4"
+                style="@style/cardButtonsL"
+                android:onClick="add4Yellow"
+                android:src="@drawable/point4" />
+
+            <ImageView
+                android:id="@+id/yellow5"
+                style="@style/cardButtonsL"
+                android:onClick="add5Yellow"
+                android:src="@drawable/point5" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/yellowTask"
+                style="@style/cardButtons"
+                android:src="@drawable/task0all" />
+
+        </LinearLayout>
+
+        <!-- 4th team END -->
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_centerHorizontal="true">
+    <TextView
+        android:id="@+id/winnerLabel"
+        style="@style/teamPoints"
+        android:text="@string/the_winner_is"
+        android:layout_marginTop="170dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/winnerCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/counter_r"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"
+        android:layout_marginTop="160dp"
+        android:visibility="invisible"/>
+</LinearLayout>
+    <LinearLayout style="@style/bottomButtonsL">
+
+        <Button
+            android:id="@+id/timerButton"
+            style="@style/counterButton"
+            android:layout_marginBottom="12dp"
+            android:layout_width="130dp"
+            android:onClick="start_timer"
+            android:text="@string/start_timer" />
+
+        <TextView
+            android:id="@+id/timerLabel"
+            style="@style/pointLabel"
+            android:text="@string/timerNo"
+            android:textSize="@dimen/mediumFontSize"
+            android:drawableLeft="@drawable/hourglass"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
+
+        <Button
+            style="@style/counterButton"
+            android:layout_width="130dp"
+            android:layout_marginBottom="12dp"
+            android:onClick="quitGame"
+            android:text="@string/quit_game" />
+
+    </LinearLayout>
+
+</RelativeLayout>

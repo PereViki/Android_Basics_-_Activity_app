@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="smallFontSize">16sp</dimen>
+    <dimen name="smallFontSizeL">12sp</dimen>
     <dimen name="mediumFontSize">24sp</dimen>
     <dimen name="largeFontSize">48sp</dimen>
+    <dimen name="largeFontSizeL">36sp</dimen>
     <dimen name="counterSize">48dp</dimen>
     <dimen name="cardSize">62dp</dimen>
+    <dimen name="cardSizeL">48dp</dimen>
     <dimen name="controlsTopMargin">340dp</dimen>
+    <dimen name="controlsLTopMargin">170dp</dimen>
     <dimen name="countersTopMargin">80dp</dimen>
+    <dimen name="countersLTopMargin">40dp</dimen>
     <dimen name="tinySpace">12dp</dimen>
 </resources>

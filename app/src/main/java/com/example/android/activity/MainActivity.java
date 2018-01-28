@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -42,19 +41,19 @@ public class MainActivity extends AppCompatActivity {
 
         int noOfTeams = 0;
 
-        if (isRedPlaying == true) {
+        if (isRedPlaying) {
             noOfTeams += 1;
         }
 
-        if (isGreenPlaying == true) {
+        if (isGreenPlaying) {
             noOfTeams += 1;
         }
 
-        if (isBluePlaying == true) {
+        if (isBluePlaying) {
             noOfTeams += 1;
         }
 
-        if (isYellowPlaying == true) {
+        if (isYellowPlaying) {
             noOfTeams += 1;
         }
 
