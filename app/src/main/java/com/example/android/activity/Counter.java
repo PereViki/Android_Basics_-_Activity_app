@@ -441,7 +441,7 @@ public class Counter extends AppCompatActivity {
 
     }
 
-    // If the reset button is clicked the
+    // If the reset/new game button is clicked the
     // winner message has to be hidden
     // and the card has to be shown again
     public void showCards() {
@@ -476,7 +476,9 @@ public class Counter extends AppCompatActivity {
 
         winnerLabel.setVisibility(View.GONE);
         winnerCounter.setVisibility(View.GONE);
-        winnerToast.cancel();
+        if (winnerToast != null) {
+            winnerToast.cancel();
+        }
         reset_button.setText(getString(R.string.reset_points));
 
     }
