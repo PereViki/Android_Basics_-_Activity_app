@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CheckBox redCB;
+    private CheckBox greenCB;
+    private CheckBox blueCB;
+    private CheckBox yellowCB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,39 +26,37 @@ public class MainActivity extends AppCompatActivity {
             Window w = getWindow();
             w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
             w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            ;
         }
+
         setContentView(R.layout.activity_main);
     }
 
+    // method to start the game
+    // - it evaluates the states of team checkboxes
+    // - it opens the counter activity
     public void startGame(View view) {
 
-        CheckBox redCB = findViewById(R.id.redCB);
-        boolean isRedPlaying = redCB.isChecked();
-
-        CheckBox greenCB = findViewById(R.id.greenCB);
-        boolean isGreenPlaying = greenCB.isChecked();
-
-        CheckBox blueCB = findViewById(R.id.blueCB);
-        boolean isBluePlaying = blueCB.isChecked();
-
-        CheckBox yellowCB = findViewById(R.id.yellowCB);
-        boolean isYellowPlaying = yellowCB.isChecked();
+        redCB = findViewById(R.id.redCB);
+        greenCB = findViewById(R.id.greenCB);
+        blueCB = findViewById(R.id.blueCB);
+        yellowCB = findViewById(R.id.yellowCB);
 
         int noOfTeams = 0;
 
-        if (isRedPlaying) {
+        if (redCB.isChecked()) {
             noOfTeams += 1;
         }
 
-        if (isGreenPlaying) {
+        if (greenCB.isChecked()) {
             noOfTeams += 1;
         }
 
-        if (isBluePlaying) {
+        if (blueCB.isChecked()) {
             noOfTeams += 1;
         }
 
-        if (isYellowPlaying) {
+        if (yellowCB.isChecked()) {
             noOfTeams += 1;
         }
 
@@ -66,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 Intent openGame = new Intent(this, Counter.class);
-                openGame.putExtra("isRedPlaying", isRedPlaying);
-                openGame.putExtra("isGreenPlaying", isGreenPlaying);
-                openGame.putExtra("isBluePlaying", isBluePlaying);
-                openGame.putExtra("isYellowPlaying", isYellowPlaying);
+                openGame.putExtra("isRedPlaying", redCB.isChecked());
+                openGame.putExtra("isGreenPlaying", greenCB.isChecked());
+                openGame.putExtra("isBluePlaying", blueCB.isChecked());
+                openGame.putExtra("isYellowPlaying", yellowCB.isChecked());
                 startActivity(openGame);
         }
     }

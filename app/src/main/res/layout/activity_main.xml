@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/matchPar"
     android:background="@color/colorPrimary"
     tools:context="com.example.android.activity.MainActivity">
 
-    <ImageView
-        style="@style/matchPar"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/bg" />
-
-    <TextView
-        style="@style/firstText"
-        android:text="@string/which_teams" />
-
-    <LinearLayout style="@style/controls">
-
-        <CheckBox
-            android:id="@+id/redCB"
-            style="@style/checkBoxes" />
+    <LinearLayout style="@style/mainRoot">
 
         <ImageView
-            style="@style/counterStyle1"
-            android:contentDescription="@string/red_team"
-            android:src="@drawable/counter_r" />
+            style="@style/wrapCont"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitStart"
+            android:src="@drawable/bg" />
 
-        <CheckBox
-            android:id="@+id/greenCB"
-            style="@style/checkBoxes" />
+        <TextView
+            style="@style/firstText"
+            android:text="@string/which_teams" />
 
-        <ImageView
-            style="@style/counterStyle1"
-            android:contentDescription="@string/green_team"
-            android:src="@drawable/counter_g" />
+        <LinearLayout
+            android:id="@+id/controlsMain"
+            style="@style/controls">
 
-        <CheckBox
-            android:id="@+id/blueCB"
-            style="@style/checkBoxes" />
+            <CheckBox
+                android:id="@+id/redCB"
+                style="@style/checkBoxes" />
 
-        <ImageView
-            style="@style/counterStyle1"
-            android:contentDescription="@string/blue_team"
-            android:src="@drawable/counter_b" />
+            <ImageView
+                style="@style/counterStyle"
+                android:contentDescription="@string/red_team"
+                android:src="@drawable/counter_r" />
 
-        <CheckBox
-            android:id="@+id/yellowCB"
-            style="@style/checkBoxes" />
+            <CheckBox
+                android:id="@+id/greenCB"
+                style="@style/checkBoxes" />
 
-        <ImageView
-            style="@style/counterStyle1"
-            android:contentDescription="@string/yellow_team"
-            android:src="@drawable/counter_y" />
+            <ImageView
+                style="@style/counterStyle"
+                android:contentDescription="@string/green_team"
+                android:src="@drawable/counter_g" />
+
+            <CheckBox
+                android:id="@+id/blueCB"
+                style="@style/checkBoxes" />
+
+            <ImageView
+                style="@style/counterStyle"
+                android:contentDescription="@string/blue_team"
+                android:src="@drawable/counter_b" />
+
+            <CheckBox
+                android:id="@+id/yellowCB"
+                style="@style/checkBoxes" />
+
+            <ImageView
+                style="@style/counterStyle"
+                android:contentDescription="@string/yellow_team"
+                android:src="@drawable/counter_y" />
+
+        </LinearLayout>
+
+        <Button
+            style="@style/startButton"
+            android:onClick="startGame"
+            android:text="@string/start_button" />
 
     </LinearLayout>
-
-    <Button
-        style="@style/startButton"
-        android:onClick="startGame"
-        android:text="@string/start_button" />
-
-</RelativeLayout>
+</ScrollView>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Activity</string>
     <string name="which_teams">Melyik csapatok játszanak?</string>
     <string name="start_button">Játék indítása</string>
@@ -14,11 +13,17 @@
     <string name="team2Points">0</string>
     <string name="team3Points">0</string>
     <string name="team4Points">0</string>
-    <string name="quit_game">Kilépés</string>
+    <string name="quit_game">Kilép</string>
     <string name="start_timer">Óra indul</string>
     <string name="reset_timer">Leállítás</string>
     <string name="timeIsUp">Lejárt az idő!</string>
     <string name="the_winner_is">A nyertes:</string>
     <string name="timerNo">60</string>
-    <string name="winner_toast">Gratulálunk! A játékot a <xliff:g id="team" example="Piros csapat">%s</xliff:g> nyerte!</string>
+    <string name="winner_toast">Gratulálunk! A játékot a <xliff:g example="Piros csapat" id="team">%s</xliff:g> nyerte!</string>
+    <string name="reset_points">Visszaállít</string>
+    <string name="card3">3 pontos kártya</string>
+    <string name="card4">4 pontos kártya</string>
+    <string name="card5">5 pontos kártyad</string>
+    <string name="task">feladat</string>
+    <string name="new_game">Új játék</string>
 </resources>

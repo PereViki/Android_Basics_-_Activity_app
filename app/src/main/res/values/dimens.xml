@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- font sizes in sp -->
     <dimen name="smallFontSize">16sp</dimen>
     <dimen name="smallFontSizeL">12sp</dimen>
     <dimen name="mediumFontSize">24sp</dimen>
     <dimen name="largeFontSize">48sp</dimen>
     <dimen name="largeFontSizeL">36sp</dimen>
+
+    <!-- object sizes in dp -->
     <dimen name="counterSize">48dp</dimen>
     <dimen name="cardSize">62dp</dimen>
     <dimen name="cardSizeL">48dp</dimen>
-    <dimen name="controlsTopMargin">340dp</dimen>
-    <dimen name="controlsLTopMargin">170dp</dimen>
-    <dimen name="countersTopMargin">80dp</dimen>
-    <dimen name="countersLTopMargin">40dp</dimen>
+    <dimen name="quitButtonWidth">80dp</dimen>
+    <dimen name="dividerWidth">1dp</dimen>
+    <dimen name="winnerLabelHeight">170dp</dimen>
+    <dimen name="winnerLabelLHeight">100dp</dimen>
+    <dimen name="bottomButtonWidth">130dp</dimen>
+    <dimen name="logoWidth">300dp</dimen>
+    <dimen name="logoHeight">140dp</dimen>
+
+    <!-- margin and padding sizes in dp -->
+    <dimen name="mainRootPaddingBottom">50dp</dimen>
+    <dimen name="mainRootLPaddingBottom">10dp</dimen>
+    <dimen name="firstTextTopMargin">300dp</dimen>
+    <dimen name="firstTextLTopMargin">24dp</dimen>
+    <dimen name="controlsLTopMargin">24dp</dimen>
+    <dimen name="layoutBottomPadding">8dp</dimen>
+
+    <dimen name="countersTopMargin">0dp</dimen>
+    <dimen name="countersLTopMargin">8dp</dimen>
+    <dimen name="countersLSidePadding">36dp</dimen>
+
+    <dimen name="winnerLabelMarginTop">12dp</dimen>
+    <dimen name="winnerLabelLMarginTop">12dp</dimen>
+    <dimen name="logoCounterLHeight">52dp</dimen>
+    <dimen name="bottomButtonsLTopMargin">12dp</dimen>
+
     <dimen name="tinySpace">12dp</dimen>
+    <dimen name="sizeXS">8dp</dimen>
+
+    <dimen name="quitButtonTopMargin">24dp</dimen>
+    <dimen name="quitButtonLTopMargin">12dp</dimen>
+    <dimen name="zeroSpace">0dp</dimen>
+    <dimen name="teamPointsTopMargin">18dp</dimen>
+    <dimen name="teamPointsBottomMargin">24dp</dimen>
+    <dimen name="teamPointsLBottomMargin">12dp</dimen>
+    <dimen name="cardsMarginBottom">8dp</dimen>
+    <dimen name="cardsLMarginBottom">12dp</dimen>
+
+
 </resources>

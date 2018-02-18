@@ -19,49 +19,99 @@
         <item name="android:layout_width">wrap_content</item>
     </style>
 
+    <!-- Style of the LinearLayout on the main activity in portrait mode -->
+    <style name="mainRoot" parent="matchPar">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Style of the logo on the main activity in portrait mode -->
+    <style name="logoStyle" parent="matchPar">
+        <item name="android:layout_width">@dimen/logoWidth</item>
+        <item name="android:layout_height">@dimen/logoHeight</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:src">@drawable/bg</item>
+    </style>
+
+    <!-- Style of the text on the main activity in portrait mode -->
     <style name="firstText" parent="wrapCont">
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/mediumFontSize</item>
-        <item name="android:layout_marginTop">250dp</item>
+        <item name="android:layout_marginBottom">@dimen/mainRootPaddingBottom</item>
     </style>
 
+    <!-- Style of the text on the main activity in landscape mode -->
     <style name="firstTextL" parent="firstText">
-        <item name="android:layout_marginTop">120dp</item>
+        <item name="android:layout_marginTop">@dimen/firstTextLTopMargin</item>
+        <item name="android:layout_marginBottom">@dimen/mainRootLPaddingBottom</item>
     </style>
 
+    <!-- Style of the checkboxes on the main activity in both modes -->
     <style name="checkBoxes" parent="wrapCont">
         <item name="android:buttonTint">@color/textColor</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">@dimen/sizeXS</item>
     </style>
 
-    <style name="counterStyle1" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_width">48dp</item>
+    <!-- Style of the counters on the main and on the counter activity in both mode -->
+    <style name="counterStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">@dimen/counterSize</item>
+        <item name="android:layout_width">@dimen/counterSize</item>
     </style>
 
+    <!-- Style of the ViewGroup of team selector checkboxes
+        on the main activity in portrait mode -->
+    <style name="controls" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">@dimen/mainRootPaddingBottom</item>
+    </style>
+
+    <!-- Style of the ViewGroup of team selector checkboxes
+        on the main activity in landscape mode -->
+    <style name="controlsL" parent="controls">
+        <item name="android:layout_marginTop">@dimen/controlsLTopMargin</item>
+    </style>
+
+    <!-- Style of the start button on the main activity in both modes -->
     <style name="startButton" parent="wrapCont">
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:layout_marginBottom">@dimen/counterSize</item>
+        <item name="android:layout_marginBottom">@dimen/tinySpace</item>
         <item name="android:backgroundTint">@color/colorAccent</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="controls" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Style of the relative layout on the counter activity in both modes -->
+    <style name="counterRoot" parent="matchPar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Style of the logo on the counter activity in portrait mode -->
+    <style name="logoCounter" parent="matchPar">
+        <item name="android:layout_width">@dimen/zeroSpace</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_marginTop">@dimen/controlsTopMargin</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:orientation">horizontal</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/bg_counter</item>
     </style>
 
-    <style name="controlsL" parent="controls">
-        <item name="android:layout_marginTop">@dimen/controlsLTopMargin</item>
+    <!-- Style of the placeholder besides the logo on the counter activity in portrait mode -->
+    <style name="logoPlaceholder" parent="matchPar">
+        <item name="android:layout_width">@dimen/zeroSpace</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/tinySpace</item>
     </style>
 
+    <!-- Style of the group of counters on the counter activity in portrait mode -->
     <style name="counters" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -69,82 +119,164 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <!-- Style of the group of counters on the counter activity in landscape mode -->
     <style name="countersL" parent="counters">
         <item name="android:layout_marginTop">@dimen/countersLTopMargin</item>
+        <item name="android:paddingLeft">@dimen/countersLSidePadding</item>
+        <item name="android:paddingRight">@dimen/countersLSidePadding</item>
     </style>
 
+    <!-- Style of the team's view group on the counter activity in portrait mode -->
     <style name="counter" parent="wrapCont">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">@dimen/zeroSpace</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:orientation">vertical</item>
     </style>
 
+    <!-- Style of the team's view group on the counter activity in landscape mode -->
     <style name="counterL" parent="counter">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:padding">0dp</item>
-        <item name="android:paddingTop">8dp</item>
+        <item name="android:padding">@dimen/zeroSpace</item>
+        <item name="android:paddingTop">@dimen/sizeXS</item>
     </style>
 
+    <!-- Style of the team's points on the counter activity in portrait mode -->
     <style name="teamPoints" parent="wrapCont">
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/largeFontSize</item>
-        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_marginTop">@dimen/teamPointsTopMargin</item>
     </style>
 
+    <!-- Style of the team's points on the counter activity in landscape mode -->
     <style name="teamPointsL" parent="teamPoints">
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/zeroSpace</item>
+        <item name="android:layout_height">@dimen/counterSize</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:layout_marginTop">0dp</item>
         <item name="android:textSize">@dimen/largeFontSizeL</item>
     </style>
 
+    <!-- Style of the team's point label on the counter activity in portrait mode -->
     <style name="pointLabel" parent="teamPoints">
         <item name="android:textSize">@dimen/smallFontSize</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:layout_marginTop">@dimen/zeroSpace</item>
+        <item name="android:layout_marginBottom">@dimen/teamPointsBottomMargin</item>
+        <item name="android:text">@string/points</item>
     </style>
 
+    <!-- Style of the team's point label on the counter activity in landscape mode -->
     <style name="pointLabelL" parent="pointLabel">
-        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginBottom">@dimen/teamPointsLBottomMargin</item>
         <item name="android:textSize">@dimen/smallFontSizeL</item>
     </style>
 
+    <!-- Style of the divider on the counter activity in both modes -->
     <style name="divider" parent="matchPar">
-        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_width">@dimen/dividerWidth</item>
         <item name="android:background">@color/transparentWhite</item>
     </style>
 
+    <!-- Style of the cards on the counter activity in portrait mode -->
     <style name="cardButtons" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_height">@dimen/cardSize</item>
         <item name="android:layout_width">@dimen/cardSize</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginBottom">@dimen/cardsLMarginBottom</item>
+        <item name="android:onClick">onCardClick</item>
     </style>
 
+    <!-- Style of the cards on the counter activity in landscape mode -->
     <style name="cardButtonsL" parent="cardButtons">
         <item name="android:layout_height">@dimen/cardSizeL</item>
         <item name="android:layout_width">@dimen/cardSizeL</item>
-        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginBottom">@dimen/cardsLMarginBottom</item>
+        <item name="android:onClick">onCardClick</item>
     </style>
 
-    <style name="bottomButtons" parent="controls">
+    <!-- Style of the tasks on the counter activity in both modes -->
+    <style name="taskIcons" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_height">@dimen/cardSize</item>
+        <item name="android:layout_width">@dimen/cardSize</item>
+        <item name="android:layout_marginBottom">@dimen/cardsLMarginBottom</item>
+    </style>
+
+    <!-- Style of the bottom controls group on the counter activity in portrait mode -->
+    <style name="bottomControls" parent="controls">
+        <item name="android:layout_marginTop">@dimen/controlsLTopMargin</item>
         <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:paddingBottom">@dimen/zeroSpace</item>
     </style>
 
-    <style name="bottomButtonsL" parent="controls">
+    <!-- Style of the bottom controls group on the counter activity in landscape mode -->
+    <style name="bottomControlsL" parent="bottomControls">
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginTop">@dimen/bottomButtonsLTopMargin</item>
     </style>
 
+    <!-- Style of the bottom buttons on the counter activity in both modes -->
     <style name="counterButton" parent="startButton">
-        <item name="android:layout_marginBottom">@dimen/smallFontSize</item>
+        <item name="android:layout_marginBottom">@dimen/tinySpace</item>
         <item name="android:layout_marginRight">@dimen/tinySpace</item>
         <item name="android:layout_marginLeft">@dimen/tinySpace</item>
+        <item name="android:layout_width">@dimen/bottomButtonWidth</item>
     </style>
+
+    <!-- Style of the quit button on the counter activity in portrait mode -->
+    <style name="quitButton" parent="wrapCont">
+        <item name="android:layout_width">@dimen/zeroSpace</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/tinySpace</item>
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style of the quit button on the counter activity in landscape mode -->
+    <style name="quitButtonL" parent="quitButton">
+
+    </style>
+
+    <!-- Style of the winner label on the counter activity in portrait mode -->
+    <style name="winnerLabel" parent="teamPoints">
+        <item name="android:layout_marginTop">@dimen/winnerLabelMarginTop</item>
+        <item name="android:text">@string/the_winner_is</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Style of the winner label on the counter activity in landscape mode -->
+    <style name="winnerLabelL" parent="winnerLabel">
+        <item name="android:layout_marginTop">@dimen/winnerLabelLMarginTop</item>
+    </style>
+
+    <!-- Style of the winner counter on the counter activity in portrait mode -->
+    <style name="winnerCounter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/winnerLabelHeight</item>
+        <item name="android:padding">@dimen/tinySpace</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:src">@drawable/counter_r</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Style of the winner counter on the counter activity in landscape mode -->
+    <style name="winnerCounterL" parent="winnerCounter">
+        <item name="android:layout_height">@dimen/winnerLabelLHeight</item>
+        <item name="android:layout_marginTop">@dimen/winnerLabelLMarginTop</item>
+    </style>
+
+    <!-- Style of the timer on the counter activity in both modes -->
+    <style name="timer" parent="pointLabel">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:drawableLeft">@drawable/hourglass</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/timerNo</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/mediumFontSize</item>
+        <item name="android:layout_marginBottom">@dimen/tinySpace</item>
+    </style>
+
 </resources>

@@ -27,10 +27,14 @@ public class Counter extends AppCompatActivity {
     static final String STATE_TIMER_SECONDS = "timer_label_string";
 
     //Declarations of variables
-    public int totalRedPoints, totalGreenPoints, totalBluePoints, totalYellowPoints = 0;
+    public int totalRedPoints = 0;
+    public int totalGreenPoints = 0;
+    public int totalBluePoints = 0;
+    public int totalYellowPoints = 0;
     CountDownTimer rTimer = null;
     int maxPoint = 48;
 
+    //variables for views
     boolean isRedPlaying;
     boolean isGreenPlaying;
     boolean isBluePlaying;
@@ -62,6 +66,8 @@ public class Counter extends AppCompatActivity {
     String timer_label_string;
     TextView timer_label;
     Button start_button;
+    Button reset_button;
+    Toast winnerToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,14 +100,15 @@ public class Counter extends AppCompatActivity {
         yellowTask = findViewById(R.id.yellowTask);
         winnerLabel = findViewById(R.id.winnerLabel);
         winnerCounter = findViewById(R.id.winnerCounter);
-        redTeam = (ViewGroup) findViewById(R.id.firstTeamGroup);
-        greenTeam = (ViewGroup) findViewById(R.id.secondTeamGroup);
-        blueTeam = (ViewGroup) findViewById(R.id.thirdTeamGroup);
-        yellowTeam = (ViewGroup) findViewById(R.id.fourthTeamGroup);
+        redTeam = findViewById(R.id.firstTeamGroup);
+        greenTeam = findViewById(R.id.secondTeamGroup);
+        blueTeam = findViewById(R.id.thirdTeamGroup);
+        yellowTeam = findViewById(R.id.fourthTeamGroup);
         imgs = getResources().obtainTypedArray(R.array.tasks);
         timer_label = findViewById(R.id.timerLabel);
         timer_label_string = timer_label.getText().toString();
         start_button = findViewById(R.id.timerButton);
+        reset_button = findViewById(R.id.resetButton);
 
         //data of teams playing from main activity
         isRedPlaying = getIntent().getExtras().getBoolean("isRedPlaying");
@@ -164,7 +171,7 @@ public class Counter extends AppCompatActivity {
                 displayPoints(totalGreenPoints, R.id.totalPointsGreen, getString(R.string.green_team), R.drawable.counter_g);
                 greenTask.setImageResource(imgs.getResourceId(totalGreenPoints, -1));
             }
-            if(isBluePlaying) {
+            if (isBluePlaying) {
                 totalBluePoints = savedInstanceState.getInt(STATE_BLUE_POINTS);
                 displayPoints(totalBluePoints, R.id.totalPointsBlue, getString(R.string.blue_team), R.drawable.counter_b);
                 blueTask.setImageResource(imgs.getResourceId(totalBluePoints, -1));
@@ -201,7 +208,14 @@ public class Counter extends AppCompatActivity {
         }
     }
 
-    //Method to update points of respective teams team
+    /**
+     * Method to update points of respective teams on rotation
+     *
+     * @param points  total points to be shown
+     * @param teamId  resource id of the label of the team's points
+     * @param team    name of the team
+     * @param counter resource id of the counter image of the team
+     */
     public void displayPoints(int points, int teamId, String team, int counter) {
         totalPoints = findViewById(teamId);
         totalPoints.setText(String.valueOf(points));
@@ -209,80 +223,76 @@ public class Counter extends AppCompatActivity {
         resetTimer();
     }
 
-    //Red team cards
-    public void add3Red(View view) {
-        totalRedPoints += 3;
-        displayPoints(totalRedPoints, R.id.totalPointsRed, getString(R.string.red_team), R.drawable.counter_r);
-        redTask.setImageResource(imgs.getResourceId(totalRedPoints, -1));
+    /**
+     * Method to update points of respective team
+     *
+     * @param points total points to be shown
+     * @param teamId resource id of the label of the team's points
+     */
+    public void displayPoints2(int points, int teamId) {
+        totalPoints = findViewById(teamId);
+        totalPoints.setText(String.valueOf(points));
+        resetTimer();
     }
 
-    public void add4Red(View view) {
-        totalRedPoints += 4;
-        displayPoints(totalRedPoints, R.id.totalPointsRed, getString(R.string.red_team), R.drawable.counter_r);
-        redTask.setImageResource(imgs.getResourceId(totalRedPoints, -1));
+    /**
+     * Adds points to the teams based on the parameters given
+     *
+     * @param points            number of points to be added
+     * @param totalTeamPoints   current number of points of respective team
+     * @param totalTeamPointsID resource id of the label of the team's points
+     * @param TeamNameID        resource id of the team name
+     * @param counterDrawableID resource id of the team counter
+     * @param taskID            resource id of the team task image
+     * @return the new number of points
+     */
+    public int addPoints(int points, int totalTeamPoints, int totalTeamPointsID, int TeamNameID, int counterDrawableID, ImageView taskID) {
+        totalTeamPoints += points;
+        displayPoints2(totalTeamPoints, totalTeamPointsID);
+        taskID.setImageResource(imgs.getResourceId(totalTeamPoints, -1));
+        maxPoint2(totalTeamPoints, getString(TeamNameID), counterDrawableID);
+        return totalTeamPoints;
     }
 
-    public void add5Red(View view) {
-        totalRedPoints += 5;
-        displayPoints(totalRedPoints, R.id.totalPointsRed, getString(R.string.red_team), R.drawable.counter_r);
-        redTask.setImageResource(imgs.getResourceId(totalRedPoints, -1));
-    }
-
-    //Green team cards
-    public void add3Green(View view) {
-        totalGreenPoints += 3;
-        displayPoints(totalGreenPoints, R.id.totalPointsGreen, getString(R.string.green_team), R.drawable.counter_g);
-        greenTask.setImageResource(imgs.getResourceId(totalGreenPoints, -1));
-    }
-
-    public void add4Green(View view) {
-        totalGreenPoints += 4;
-        displayPoints(totalGreenPoints, R.id.totalPointsGreen, getString(R.string.green_team), R.drawable.counter_g);
-        greenTask.setImageResource(imgs.getResourceId(totalGreenPoints, -1));
-    }
-
-    public void add5Green(View view) {
-        totalGreenPoints += 5;
-        displayPoints(totalGreenPoints, R.id.totalPointsGreen, getString(R.string.green_team), R.drawable.counter_g);
-        greenTask.setImageResource(imgs.getResourceId(totalGreenPoints, -1));
-    }
-
-    //Blue team cards
-    public void add3Blue(View view) {
-        totalBluePoints += 3;
-        displayPoints(totalBluePoints, R.id.totalPointsBlue, getString(R.string.blue_team), R.drawable.counter_b);
-        blueTask.setImageResource(imgs.getResourceId(totalBluePoints, -1));
-    }
-
-    public void add4Blue(View view) {
-        totalBluePoints += 4;
-        displayPoints(totalBluePoints, R.id.totalPointsBlue, getString(R.string.blue_team), R.drawable.counter_b);
-        blueTask.setImageResource(imgs.getResourceId(totalBluePoints, -1));
-    }
-
-    public void add5Blue(View view) {
-        totalBluePoints += 5;
-        displayPoints(totalBluePoints, R.id.totalPointsBlue, getString(R.string.blue_team), R.drawable.counter_b);
-        blueTask.setImageResource(imgs.getResourceId(totalBluePoints, -1));
-    }
-
-    //Yellow team cards
-    public void add3Yellow(View view) {
-        totalYellowPoints += 3;
-        displayPoints(totalYellowPoints, R.id.totalPointsYellow, getString(R.string.yellow_team), R.drawable.counter_y);
-        yellowTask.setImageResource(imgs.getResourceId(totalYellowPoints, -1));
-    }
-
-    public void add4Yellow(View view) {
-        totalYellowPoints += 4;
-        displayPoints(totalYellowPoints, R.id.totalPointsYellow, getString(R.string.yellow_team), R.drawable.counter_y);
-        yellowTask.setImageResource(imgs.getResourceId(totalYellowPoints, -1));
-    }
-
-    public void add5Yellow(View view) {
-        totalYellowPoints += 5;
-        displayPoints(totalYellowPoints, R.id.totalPointsYellow, getString(R.string.yellow_team), R.drawable.counter_y);
-        yellowTask.setImageResource(imgs.getResourceId(totalYellowPoints, -1));
+    public void onCardClick(View view) {
+        switch (view.getId()) {
+            case R.id.red3:         // Adds 3 points to the red team
+                totalRedPoints = addPoints(3, totalRedPoints, R.id.totalPointsRed, R.string.red_team, R.drawable.counter_r, redTask);
+                break;
+            case R.id.red4:         // Adds 4 points to the red team
+                totalRedPoints = addPoints(4, totalRedPoints, R.id.totalPointsRed, R.string.red_team, R.drawable.counter_r, redTask);
+                break;
+            case R.id.red5:         // Adds 5 points to the red team
+                totalRedPoints = addPoints(5, totalRedPoints, R.id.totalPointsRed, R.string.red_team, R.drawable.counter_r, redTask);
+                break;
+            case R.id.green3:       // Adds 3 points to the green team
+                totalGreenPoints = addPoints(3, totalGreenPoints, R.id.totalPointsGreen, R.string.green_team, R.drawable.counter_g, greenTask);
+                break;
+            case R.id.green4:       // Adds 4 points to the green team
+                totalGreenPoints = addPoints(4, totalGreenPoints, R.id.totalPointsGreen, R.string.green_team, R.drawable.counter_g, greenTask);
+                break;
+            case R.id.green5:       // Adds 5 points to the green team
+                totalGreenPoints = addPoints(5, totalGreenPoints, R.id.totalPointsGreen, R.string.green_team, R.drawable.counter_g, greenTask);
+                break;
+            case R.id.blue3:        // Adds 3 points to the blue team
+                totalBluePoints = addPoints(3, totalBluePoints, R.id.totalPointsBlue, R.string.blue_team, R.drawable.counter_b, blueTask);
+                break;
+            case R.id.blue4:        // Adds 4 points to the blue team
+                totalBluePoints = addPoints(4, totalBluePoints, R.id.totalPointsBlue, R.string.blue_team, R.drawable.counter_b, blueTask);
+                break;
+            case R.id.blue5:        // Adds 5 points to the blue team
+                totalBluePoints = addPoints(5, totalBluePoints, R.id.totalPointsBlue, R.string.blue_team, R.drawable.counter_b, blueTask);
+                break;
+            case R.id.yellow3:      // Adds 3 points to the yellow team
+                totalYellowPoints = addPoints(3, totalYellowPoints, R.id.totalPointsYellow, R.string.yellow_team, R.drawable.counter_y, yellowTask);
+                break;
+            case R.id.yellow4:      // Adds 4 points to the yellow team
+                totalYellowPoints = addPoints(4, totalYellowPoints, R.id.totalPointsYellow, R.string.yellow_team, R.drawable.counter_y, yellowTask);
+                break;
+            case R.id.yellow5:      // Adds 5 points to the yellow team
+                totalYellowPoints = addPoints(5, totalYellowPoints, R.id.totalPointsYellow, R.string.yellow_team, R.drawable.counter_y, yellowTask);
+                break;
+        }
     }
 
     //Quit from the game
@@ -290,6 +300,34 @@ public class Counter extends AppCompatActivity {
         resetTimer();
         Intent quitGame = new Intent(this, MainActivity.class);
         startActivity(quitGame);
+    }
+
+    //Resetting the points of the teams
+    public void resetPoints(View view) {
+
+        if (isRedPlaying) {
+            totalRedPoints = 0;
+            displayPoints(totalRedPoints, R.id.totalPointsRed, "Red team", R.drawable.counter_r);
+            redTask.setImageResource(imgs.getResourceId(totalRedPoints, -1));
+        }
+        if (isGreenPlaying) {
+            totalGreenPoints = 0;
+            displayPoints(totalGreenPoints, R.id.totalPointsGreen, "Green team", R.drawable.counter_g);
+            greenTask.setImageResource(imgs.getResourceId(totalGreenPoints, -1));
+        }
+        if (isBluePlaying) {
+            totalBluePoints = 0;
+            displayPoints(totalBluePoints, R.id.totalPointsBlue, "Blue team", R.drawable.counter_b);
+            blueTask.setImageResource(imgs.getResourceId(totalBluePoints, -1));
+        }
+        if (isYellowPlaying) {
+            totalYellowPoints = 0;
+            displayPoints(totalYellowPoints, R.id.totalPointsYellow, "Yellow team", R.drawable.counter_y);
+            yellowTask.setImageResource(imgs.getResourceId(totalYellowPoints, -1));
+        }
+
+        showCards();
+
     }
 
     //Timer function
@@ -310,6 +348,10 @@ public class Counter extends AppCompatActivity {
 
     }
 
+    /**
+     * @param Seconds initial time on the countdown timer
+     * @param tv      TextView that shows the time left
+     */
     public void reverseTimer(int Seconds, final TextView tv) {
 
         rTimer = new CountDownTimer(Seconds * 1000 + 1000, 1000) {
@@ -333,7 +375,7 @@ public class Counter extends AppCompatActivity {
     }
 
     void resetTimer() {
-        if (rTimer != null){
+        if (rTimer != null) {
             //Button start_button = (Button) findViewById(R.id.timerButton);
             start_button.setText(R.string.start_timer);
             timer_label.setText(R.string.timerNo);
@@ -345,8 +387,19 @@ public class Counter extends AppCompatActivity {
     //checking if the new points has reached the max points
     public void maxPoint(String team, int counter) {
         if (totalRedPoints >= maxPoint || totalGreenPoints >= maxPoint || totalBluePoints >= maxPoint || totalYellowPoints >= maxPoint) {
-            Toast.makeText(this, getString(R.string.winner_toast, team), Toast.LENGTH_SHORT).show();
+            winnerToast = Toast.makeText(this, getString(R.string.winner_toast, team), Toast.LENGTH_SHORT);
+            winnerToast.show();
             removeCards(counter);
+            reset_button.setText(getString(R.string.new_game));
+        }
+    }
+
+    public void maxPoint2(int totalPoints, String team, int counter) {
+        if (totalPoints >= maxPoint) {
+            winnerToast = Toast.makeText(this, getString(R.string.winner_toast, team), Toast.LENGTH_SHORT);
+            winnerToast.show();
+            removeCards(counter);
+            reset_button.setText(getString(R.string.new_game));
         }
     }
 
@@ -354,7 +407,7 @@ public class Counter extends AppCompatActivity {
     // and the winner will be announced
     public void removeCards(int counter) {
 
-      if (isRedPlaying) {
+        if (isRedPlaying) {
             red3.setVisibility(View.GONE);
             red4.setVisibility(View.GONE);
             red5.setVisibility(View.GONE);
@@ -388,4 +441,43 @@ public class Counter extends AppCompatActivity {
 
     }
 
+    // If the reset button is clicked the
+    // winner message has to be hidden
+    // and the card has to be shown again
+    public void showCards() {
+
+        if (isRedPlaying) {
+            red3.setVisibility(View.VISIBLE);
+            red4.setVisibility(View.VISIBLE);
+            red5.setVisibility(View.VISIBLE);
+            redTask.setVisibility(View.VISIBLE);
+        }
+
+        if (isGreenPlaying) {
+            green3.setVisibility(View.VISIBLE);
+            green4.setVisibility(View.VISIBLE);
+            green5.setVisibility(View.VISIBLE);
+            greenTask.setVisibility(View.VISIBLE);
+        }
+
+        if (isBluePlaying) {
+            blue3.setVisibility(View.VISIBLE);
+            blue4.setVisibility(View.VISIBLE);
+            blue5.setVisibility(View.VISIBLE);
+            blueTask.setVisibility(View.VISIBLE);
+        }
+
+        if (isYellowPlaying) {
+            yellow3.setVisibility(View.VISIBLE);
+            yellow4.setVisibility(View.VISIBLE);
+            yellow5.setVisibility(View.VISIBLE);
+            yellowTask.setVisibility(View.VISIBLE);
+        }
+
+        winnerLabel.setVisibility(View.GONE);
+        winnerCounter.setVisibility(View.GONE);
+        winnerToast.cancel();
+        reset_button.setText(getString(R.string.reset_points));
+
+    }
 }
